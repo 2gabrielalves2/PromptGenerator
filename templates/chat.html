@@ -1,0 +1,49 @@
+{% extends "base.html" %} {% block title %}Home Page{% endblock %}
+
+{% block content_left %}
+<h1 >Prompt Generator</h1><br>
+    <form method="POST">
+        <label for="task">Task</label><br>
+        <input type="text" id="task" name="task"><br><br>
+
+        <label for="context">Context</label><br>
+        <input type="text" id="context" name="context"><br><br>
+
+        <label for="topic">Topic</label><br>
+        <input type="text" id="topic" name="topic"><br><br>
+
+        <label for="style">Style</label><br>
+        <select id="style" name="style">
+            <option value="formal">Formal</option>
+            <option value="informal">Informal</option>
+        </select><br><br>
+
+        <label for="tone">Tone</label><br>
+        <select name="tone" id="tone">
+            <option value="calm">Calm</option>
+            <option value="persuasive">Persuasive</option>
+        </select><br><br>
+
+        <label for="audience">Audience</label><br>
+        <input type="text" id="audience" name="audience"><br><br>
+
+        <label for="word_limit">Word Limit</label><br>
+        <input type="number" id="word_limit" name="word_limit"><br><br>
+
+        <label for="format">Prompt Format</label><br>
+        <input type="text" id="format" name="format"><br><br>
+
+        <label for="example">Example</label><br>
+        <input type="text" id="example" name="example"><br><br>
+
+        <button id="prompt-generator" class="btn btn-lg btn-primary">Generate Prompt</button>
+    </form>
+{% endblock %}
+
+{% block content_right %}
+            <h2>Generated Prompt</h2>
+            <p class="mb-0 opacity-75">{{ generated_prompt }}</p><br><br>
+
+            <h2>Chat Response</h2>
+            <p class="mb-0 opacity-75">{{ form_text }}</p><br><br>
+{% endblock %}
